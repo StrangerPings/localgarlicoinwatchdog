@@ -46,7 +46,7 @@ def run():
                 return True
             else:
                 mails += 1
-                r = message.send(to='me@gmail.com', smtp={'host': 'aspmx.l.google.com', 'timeout': 5})
+                r = message.send(to='EMAIL', smtp={'host':'smtp.gmail.com', 'port': 465, 'ssl': True, 'user': 'EMAIL', 'password': 'PASSWORD', 'timeout': 5})
                 print(r.status_code)
                 return True
 
