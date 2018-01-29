@@ -26,12 +26,12 @@ def run():
     myhash = checkhashrate() #don't touch
     mails = 0 #don't touch
     minhash = 70000 #Set minimum hashrate
-    print(myhash)
+    print(str(myhash/1000) + " kH/s")
 
     while True:
         if myhash > minhash:
             myhash = checkhashrate()
-            print(myhash)
+            print(str(myhash/1000) + " kH/s")
             time.sleep(15) #Timer in seconds
             print('\033[H\033[J') #Comment this if you want to see your hashrate history
             mails = 0
