@@ -32,8 +32,8 @@ def run():
         if myhash > minhash:
             myhash = checkhashrate()
             print(myhash)
-            time.sleep(15)
-            print('\033[H\033[J')
+            time.sleep(15) #Timer in seconds
+            print('\033[H\033[J') #Comment this if you want to see your hashrate history
             mails = 0
             print('Press ctrl+z or cmd+z to stop')
         elif myhash < minhash:
