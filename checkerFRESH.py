@@ -11,7 +11,7 @@ from urllib.request import urlopen, Request
 import json
 import codecs
 import time
-import emails
+import emails # 'pip install emails' before using
 
 message = emails.html(html="TEXT",
                        subject="ALERT",
