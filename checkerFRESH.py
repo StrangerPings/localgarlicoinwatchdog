@@ -11,6 +11,11 @@ from urllib.request import urlopen, Request
 import json
 import codecs
 import time
+import emails
+
+message = emails.html(html="TEXT",
+                       subject="ALERT",
+                       mail_from=('NAME', 'me@gmail.com'))
 
 def checkhashrate():
     reader = codecs.getreader("utf-8")
@@ -41,7 +46,8 @@ def run():
                 return True
             else:
                 mails += 1
-                #sendmail()
+                r = message.send(to='me@gmail.com', smtp={'host': 'aspmx.l.google.com', 'timeout': 5})
+                print(r.status_code)
                 return True
 
 
