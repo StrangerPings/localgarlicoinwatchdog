@@ -45,8 +45,16 @@ def run():
                 run()
             else:
                 mails += 1
-                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=Hello+World')
+                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=YOURWARNINGMESSAGE')
                 run()
 
-
+def sendhashrate():
+    while True:
+        rawkhs = checkhashrate()
+        khs = str(myhash/1000) + " kH/s"
+        sendkhs = 'https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=%s' % khs
+        requests.get('' % )
+        time.sleep(600) #Send your hashrate to you each 10 minutes
+                
 run()
+sendhashrate() #comment this if you dont want to get notifications about your hashrate
