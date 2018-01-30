@@ -45,7 +45,7 @@ def run():
                 run()
             else:
                 mails += 1
-                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=Hello+World')
+                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=YOURWANINGMESSAGE')
                 run()
 
 
