@@ -1,6 +1,6 @@
 # Local Garlicoin Miners Watchdog
 
-This script sends you notifications if your miners stop working or hashrate get low
+This script sends you notifications if your miners stop working or hashrate get low.
 
 
 ## How to use:
@@ -21,10 +21,10 @@ This script sends you notifications if your miners stop working or hashrate get 
 
 **Step 6:** Run .py file in terminal: python3 filename.py
 
-**Step 7:** Take your chat id from terminal
+**Step 7:** Copy your chat id from terminal
 
 **Step 8:** Add you chat id to .py file
 
-**Step 9:** For test notifications change minhash to any big amount and run .py file
+**Step 9:** For test notification change minhash to any big amount and run .py file
 
 Don't forget to remove spacings from URLs
