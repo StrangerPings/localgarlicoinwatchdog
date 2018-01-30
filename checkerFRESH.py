@@ -1,7 +1,7 @@
 #
 # Adapted by analogorange for freshgarlicblocks.net
 #
-# Visit my project - Check you Garlicoin balance from anywhere: http://35.196.19.10/ or https://35.196.19.10/
+# Visit my project - Check you Garlicoin balance from anywhere: garli.top
 #
 # Donations: GemPKNS9zP4K9d7Qbc2HjTTDHYubnfMSKi
 #
