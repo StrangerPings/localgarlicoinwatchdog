@@ -8,9 +8,12 @@
 # Attribution 4.0 International (CC BY 4.0)
 #
 from urllib.request import urlopen, Request
-import json
-import codecs
-import time
+import json, time, requests, codecs
+
+botjson = Request('https://api.telegram.org/ TELEGRAMBOTKEY /getUpdates',headers={'User-Agent': 'Mozilla/5.0'})
+readbotjson = urlopen(botjson).read()
+botinfo = json.loads(readbotjson.decode('utf-8'))
+chatid = botinfo["result"][0]["message"]["chat"]["id"]
 
 def checkhashrate():
     reader = codecs.getreader("utf-8")
@@ -22,11 +25,12 @@ def checkhashrate():
     hashrate = int(obj["data"]["workers"]["ENTERYOURWALLET"]["hashrate"])
     return hashrate;
 
+mails = 0 #don't touch
+
 def run():
+    global mails
     myhash = checkhashrate() #don't touch
-    mails = 0 #don't touch
-    minhash = 70000 #Set minimum hashrate
-    print(str(myhash/1000) + " kH/s")
+    minhash = 70000 #Set minimum hashrate. To check notifications set to 999999999999
 
     while True:
         if myhash > minhash:
@@ -35,14 +39,14 @@ def run():
             time.sleep(15) #Timer in seconds
             print('\033[H\033[J') #Comment this if you want to see your hashrate history
             mails = 0
-            print('Press ctrl+z or cmd+z to stop')
+            print('Press ctrl+z or cmd+z to stop. Your chat id: %s' % chatid)
         elif myhash < minhash:
             if mails == 1:
-                return True
+                run()
             else:
                 mails += 1
-                #sendmail()
-                return True
+                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=Hello+World')
+                run()
 
 
 run()
