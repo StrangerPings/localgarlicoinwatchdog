@@ -10,7 +10,7 @@
 from urllib.request import urlopen, Request
 import json, time, requests, codecs
 
-botjson = Request('https://api.telegram.org/ TELEGRAMBOTID /getUpdates',headers={'User-Agent': 'Mozilla/5.0'})
+botjson = Request('https://api.telegram.org/ TELEGRAMBOTKEY /getUpdates',headers={'User-Agent': 'Mozilla/5.0'})
 readbotjson = urlopen(botjson).read()
 botinfo = json.loads(readbotjson.decode('utf-8'))
 chatid = botinfo["result"][0]["message"]["chat"]["id"]
@@ -45,7 +45,7 @@ def run():
                 run()
             else:
                 mails += 1
-                requests.get('https://api.telegram.org/ TELEGRAMBOTID /sendMessage?chat_id= YOURCHATID &text=Hello+World')
+                requests.get('https://api.telegram.org/ TELEGRAMBOTKEY /sendMessage?chat_id= YOURCHATID &text=Hello+World')
                 run()
 
 
