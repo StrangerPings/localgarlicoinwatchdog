@@ -24,3 +24,5 @@
 **Step 8:** Add you chat id to .py file
 
 **Step 9:** For test notifications change minhash to any big amount and run .py file
+
+Don't forget to remove spacings from URLs
