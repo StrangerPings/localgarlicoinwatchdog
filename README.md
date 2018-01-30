@@ -1,4 +1,6 @@
-# checkgarlicoinminer
+# Local Garlicoin Miners Watchdog
+
+This script sends you notifications if your miners stop working or hashrate get low
 
 
 ## How to use:
